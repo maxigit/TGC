@@ -12,7 +12,9 @@ document.onkeyup = on_keyup;
 function on_keyup(e)
 {
 	var key = e ? e.which : e.event.keyCode;
-	clock_manager.ontick();
+// 	clock_manager.ontick();
+
+	update_clock_controllers();
 
 }
 
@@ -26,11 +28,19 @@ function add_clock(clock_id, config_id)
 			alert("Can't find div ["+clock_id+"]");
 	}
 
-	var config = new clockconfig();
+	var config = null; // new clockconfig();
 	var clock = clock_manager.new_player(config);
 
-	clock_controller = new ClockController(clock, clock_div);
+	var clock_controller = new PlayerClockController(clock, clock_div);
 	clock_controllers.push(clock_controller);
 
 
+}
+
+function update_clock_controllers()
+{
+	for (i in clock_controllers) 
+	{
+		clock_controllers[i].update();
+	}
 }

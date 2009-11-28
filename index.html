@@ -9,6 +9,7 @@
 <script src="model/playerclock.js" type="text/javascript"></script>
 <script src="model/clocksetting.js" type="text/javascript"></script>
 <script src="model/clockmanager.js" type="text/javascript"></script>
+<script src="controller/playerclockc.js" type="text/javascript"></script>
 <script src="controller/clockmanagerc.js" type="text/javascript"></script>
   </head>
   <body >
@@ -16,10 +17,17 @@
 		  <label id="initial_time">Initial Time</label>
 	  </div>
 
+	  <div class='player_clock' id = 'player0'>
+		  <h2>Player 1</h2>
+		  Remaining Time : <label/ class='remaining_time'>
+			  Move : <label/ class='move'>
+	  </div>
 	  <div class='player_clock' id = 'player1'>
 		  <h2>Player 1</h2>
-		  Remaining Time : <label/ id='remaining_time'>
-			  Move : <label/ id='move'>
+		  <div>
+			  Remaining Time : <label class='remaining_time'>BB</label>
+		  </div>
+			  Move : <label/ class='move'>
 	  </div>
   </body>
 </html>

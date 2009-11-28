@@ -5,8 +5,10 @@ function ClockManager()
 
 	this.new_player = function(config)
 	{
-		player = new PlayerClock(config);
-		this.playera.push(player);
+		var player = new PlayerClock(config);
+		this.players.push(player);
+
+		return player;
 
 	}
 }

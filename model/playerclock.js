@@ -9,7 +9,7 @@ const END_OF_TIME = 2;
 const OK=1;
 function PlayerClock(config)
 {
-	this.config = config ? config :  ClockSetting();
+	this.config = config ? config :  new ClockSetting();
 
 	this.reset= function ()
 	{
