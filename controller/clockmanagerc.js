@@ -4,6 +4,7 @@
 
 // Instanciating the ClockManagaer
 var clock_manager = new ClockManager();
+var clock_controllers = new Array();
 	
 //Installing event
 document.onkeyup = on_keyup;
@@ -26,9 +27,10 @@ function add_clock(clock_id, config_id)
 	}
 
 	var config = new clockconfig();
-	var clock = new PlayerClock(config);
+	var clock = clock_manager.new_player(config);
 
 	clock_controller = new ClockController(clock, clock_div);
+	clock_controllers.push(clock_controller);
 
 
 }
