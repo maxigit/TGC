@@ -14,3 +14,21 @@ function on_keyup(e)
 	clock_manager.ontick();
 
 }
+
+function add_clock(clock_id, config_id)
+{
+	var clock_div = document.getElementById(clock_id);
+	var config_div = document.getElementById(config_id);
+
+	if (clock_div == null)
+	{
+			alert("Can't find div ["+clock_id+"]");
+	}
+
+	var config = new clockconfig();
+	var clock = new PlayerClock(config);
+
+	clock_controller = new ClockController(clock, clock_div);
+
+
+}
