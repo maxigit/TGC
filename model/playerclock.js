@@ -17,7 +17,7 @@ function PlayerClock(config)
 		this.move_number = 0;
 	}
 
-	this.consume_time(time)
+	this.consume_time = function(time)
 	{
 		// all the intelligence of the clock
 		if (time < this.remaining.time)
@@ -26,11 +26,30 @@ function PlayerClock(config)
 			return  OK
 		}
 		else // trouble
-		
+		{
+
+			var overtime = time = this.remaining_time;
 			this.remainig_time = 0;
-		return END_OF_TIME;
+			return manage_overtime(overtime);
 		}
 	}
+
+	this.manage_overtime = function(overtime)
+	{
+			return END_OF_TIME;
+	}
+
+	this.next_move = function()
+	{
+		this.move_number += 1;
+	}
+
+	this.displayed_remaining_time = function()
+	{
+			return this.remaining_time;
+	}
+
+	
 
 	this.reset();
 }
