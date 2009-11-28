@@ -22,16 +22,16 @@ function PlayerClock(config)
 	this.consume_time = function(time)
 	{
 		// all the intelligence of the clock
-		if (time < this.remaining.time)
+		if (time < this.remaining_time)
 		{
-			this.remainig.time -= time;
+			this.remaining_time -= time;
 			return  OK
 		}
 		else // trouble
 		{
 
 			var overtime = time = this.remaining_time;
-			this.remainig_time = 0;
+			this.remaining_time = 0;
 			return manage_overtime(overtime);
 		}
 	}

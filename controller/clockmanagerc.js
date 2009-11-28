@@ -11,8 +11,19 @@ document.onkeyup = on_keyup;
 
 function on_keyup(e)
 {
+	var date = new Date()
 	var key = e ? e.which : e.event.keyCode;
-// 	clock_manager.ontick();
+
+
+	clock_manager.ontick(date);
+	if(key == 32)
+	{
+		clock_manager.toggle_player(date)
+	}
+	else
+	{
+
+	}
 
 	update_clock_controllers();
 
