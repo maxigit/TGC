@@ -3,6 +3,8 @@
 // and implement the rules 
 // event if the clock controller display the remaining time, 
 // the clock stoe re the elapsed time.
+
+
 const END_OF_TIME = 2;
 const OK=1;
 function PlayerClock(config)
