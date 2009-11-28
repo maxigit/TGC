@@ -19,7 +19,8 @@
 
 	  <div class='player_clock' id = 'player1'>
 		  <h2>Player 1</h2>
-		  Remaining Time : <label/ class='remaining_time'>
+		  Remaining Time : <label class='remaining_time'></label>
+			  <br/>
 			  Move : <label/ class='move'>
 	  </div>
 	  <div class='player_clock' id = 'player2'>
@@ -34,4 +35,6 @@
 <script type="text/javascript>
 	add_clock('player1', 'config1')
 	add_clock('player2', 'config1')
+
+	setInterval('on_key(null);', 100)
 </script>

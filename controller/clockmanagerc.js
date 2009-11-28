@@ -7,12 +7,12 @@ var clock_manager = new ClockManager();
 var clock_controllers = new Array();
 	
 //Installing event
-document.onkeyup = on_keyup;
+document.onkeydown= on_key;
 
-function on_keyup(e)
+function on_key(e)
 {
 	var date = new Date()
-	var key = e ? e.which : e.event.keyCode;
+	var key = e ? e.which : null;
 
 
 	clock_manager.ontick(date);
@@ -55,3 +55,5 @@ function update_clock_controllers()
 		clock_controllers[i].update();
 	}
 }
+
+
