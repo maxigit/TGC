@@ -19,15 +19,16 @@
 
 	  <div class='player_clock' id = 'player1'>
 		  <h2>Player 1</h2>
-		  Remaining Time : <label class='remaining_time'></label>
+		  Remaining Time : <font size="20"> <label class='remaining_time'></label></font>.<label class='remaining_dec'></label>
+			  
 			  <br/>
 			  Move : <label/ class='move'>
 	  </div>
 	  <div class='player_clock' id = 'player2'>
 		  <h2>Player 2</h2>
-		  <div>
-			  Remaining Time : <label class='remaining_time'>BB</label>
-		  </div>
+	  Remaining Time : <label class='remaining_time'>BB</label>&nbsp <label class='wheel'></label>
+
+	  <br/>
 			  Move : <label/ class='move'>
 	  </div>
   </body>
@@ -36,5 +37,5 @@
 	add_clock('player1', 'config1')
 	add_clock('player2', 'config1')
 
-	setInterval('on_key(null);', 100)
+	setInterval('on_key(null);', 50)
 </script>
