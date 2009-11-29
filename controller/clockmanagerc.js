@@ -9,13 +9,18 @@ var clock_controllers = new Array();
 //Installing event
 document.onkeydown= on_key;
 
-const Key_r = 114;
-const Key_s = 115;
-const Key_p = 112;
+const Key_r = 82;
+const Key_s = 83;
+const Key_p = 80;
 function on_key(e)
 {
 	var date = new Date()
 	var key = e ? e.which : null;
+
+	if(e)
+	{
+			var a=1;
+	}
 
 	process_event(key, date);
 }
@@ -51,7 +56,13 @@ function process_event(key, date)
 	}
 	else if (key == Key_p) //P
 	{
-		clock_manager.pause();
+		if(clock_manager.state == RUNNING) {
+			clock_manager.pause(date);
+		}
+		else if ( clock_manager.state == PAUSED) {
+			clock_manager.resume(date);
+		}
+
 	}
 
 	update_clock_controllers();
