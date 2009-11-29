@@ -9,20 +9,49 @@ var clock_controllers = new Array();
 //Installing event
 document.onkeydown= on_key;
 
+const Key_r = 114;
+const Key_s = 115;
+const Key_p = 112;
 function on_key(e)
 {
 	var date = new Date()
 	var key = e ? e.which : null;
 
+	process_event(key, date);
+}
+
+function process_event(key, date)
+{
+
+	date = date ? date : new Date();
 
 	clock_manager.ontick(date);
 	if(key == 32)
 	{
-		clock_manager.toggle_player(date)
+		if (clock_manager.state == UNINITIALZED)
+		{
+			start();
+		}
+		else if (clock_manager.state == RUNNING)
+		{
+			clock_manager.toggle_player(date);
+		}
+		else if (clock_manager.state == PAUSED)
+		{
+			clock_manager.resume(date);
+		}
 	}
-	else
+	else if (key == Key_s) //S
 	{
-
+		clock_manager.start();
+	}
+	else if (key == Key_r) //R
+	{
+		clock_manager.reset();
+	}
+	else if (key == Key_p) //P
+	{
+		clock_manager.pause();
 	}
 
 	update_clock_controllers();
@@ -58,12 +87,17 @@ function update_clock_controllers()
 
 function reset()
 {
-	clock_manager.reset();
+	process_event(Key_r);
 }
 
 
 function  start()
 {
-	clock_manager.start();
+	process_event(Key_s);
+}
+
+function pause()
+{
+	process_event(Key_p);
 }
 

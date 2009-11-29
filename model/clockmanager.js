@@ -28,6 +28,7 @@ function ClockManager()
 			this.players[i].reset();
 		}
 		this.last_time = null;
+		this.state = UNINITIALZED;
 	}
 	this.start = function(date)
 	{
@@ -37,14 +38,20 @@ function ClockManager()
 		}
 
 		this.active_player = this.players[0];
+		this.active_player.next_move();
 		this.state = RUNNING;
 
 		this.last_time = date;
 	}
 	this.ontick = function(date)
 	{
+		if(this.state != RUNNING)
+		{
+			return;
+		}
 		if (this.state == 0)
 		{
+			return;
 			this.start();
 		}
 
@@ -57,6 +64,24 @@ function ClockManager()
 			}
 		}
 		this.last_time = date;
+	}
+
+	this.pause = function(date)
+	{
+		this.ontick(date);
+		this.state = PAUSED;
+		this.last_time = null;
+
+	}
+
+	this.resume = function(date)
+	{
+		if (this.state != PAUSED)
+		{
+			return;
+		}
+		this.last_time = date
+			this.state = RUNNING;
 	}
 
 	this.toggle_player = function(date)

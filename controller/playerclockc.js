@@ -27,7 +27,7 @@ function PlayerClockController(clock, clock_div)
 		if(this.wheel_label)
 		{
 			var cent = remaining_time.dec*10+remaining_time.cent;
-			cent = (100-cent-5)%100;
+			cent = (100-cent)%100;
 			var wheelchar = '|';
 			if(cent > 75) {
 				wheelchar = '\\';
