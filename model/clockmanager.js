@@ -21,6 +21,14 @@ function ClockManager()
 
 	}
 
+	this.reset = function()
+	{
+		for (i in this.players)
+		{
+			this.players[i].reset();
+		}
+		this.last_time = null;
+	}
 	this.start = function(date)
 	{
 		for (i in this.players)
@@ -31,7 +39,7 @@ function ClockManager()
 		this.active_player = this.players[0];
 		this.state = RUNNING;
 
-		this.last_time = date
+		this.last_time = date;
 	}
 	this.ontick = function(date)
 	{

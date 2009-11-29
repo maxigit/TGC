@@ -56,5 +56,14 @@ function update_clock_controllers()
 	}
 }
 
+function reset()
+{
+	clock_manager.reset();
+}
 
+
+function  start()
+{
+	clock_manager.start();
+}
 
