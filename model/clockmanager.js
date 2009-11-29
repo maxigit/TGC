@@ -27,6 +27,7 @@ function ClockManager()
 		{
 			this.players[i].reset();
 		}
+		this.active_player = this.players[0]
 		this.last_time = null;
 		this.state = UNINITIALZED;
 	}
