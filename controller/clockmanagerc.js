@@ -93,7 +93,7 @@ function update_clock_controllers()
 	for (i in clock_controllers) 
 	{
 		var active = clock_manager.active_player == clock_controllers[i].clock;	
-		clock_controllers[i].update(active);
+		clock_controllers[i].update(active, clock_manager.state);
 	}
 }
 

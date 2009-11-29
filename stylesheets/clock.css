@@ -1,4 +1,11 @@
-.player_clock {
-	background-color: green;
+.player_clock_2 {
+	//background-color: #eee;
 }
 
+.active_player_clock_1 {
+	background-color: #dfd;
+}
+
+.active_player_clock_2 {
+	background-color: #ddd;
+}

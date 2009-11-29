@@ -11,9 +11,9 @@ function PlayerClockController(clock, clock_div)
 
 	//init
 
-	this.update = function(active)
+	this.update = function(active, state)
 	{
-		this.div.className = active ? "active_player_clock" : "player_clock";
+		this.div.className = (active ? "active_player_clock" : "player_clock") +"_" + state;
 
 		var remaining_time = splitTime( this.clock.displayed_remaining_time());
 
