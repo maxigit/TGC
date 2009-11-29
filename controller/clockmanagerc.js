@@ -99,12 +99,14 @@ function update_clock_controllers()
 function reset()
 {
 	process_event(Key_r);
+	reset_focus();
 }
 
 
 function  start()
 {
 	process_event(Key_s);
+	reset_focus();
 }
 
 function pause()
@@ -112,3 +114,11 @@ function pause()
 	process_event(Key_p);
 }
 
+
+function reset_focus()
+{
+	var parent  = document.activeElement.parentNode;
+	if (parent) {
+		parent.focus();
+	}
+}
