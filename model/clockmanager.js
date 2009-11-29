@@ -86,9 +86,9 @@ function ClockManager()
 
 	this.toggle_player = function(date)
 	{
-		this.active_player.next_move();
 		var next_index = this.players[0] == this.active_player ? 1 : 0;
 		this.active_player = this.players[next_index];
+		this.active_player.next_move();
 
 	}
 }
