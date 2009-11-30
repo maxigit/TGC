@@ -3,6 +3,7 @@ function PlayerClockController(clock, clock_div)
 {
 	this.clock = clock;
 	this.div = clock_div;
+	this.div_className = clock_div.className;
 
 	this.remaining_time_label=  this.div.getElementsByClassName('remaining_time')[0];
 	this.remaining_dec_label=  this.div.getElementsByClassName('remaining_dec')[0];
@@ -13,7 +14,7 @@ function PlayerClockController(clock, clock_div)
 
 	this.update = function(active, state)
 	{
-		this.div.className = (active ? "active_player_clock" : "player_clock") +"_" + state;
+		this.div.className = this.div_className +(active ? " active_clock" : " ") +" " + STATE_STR[state]+"_clock";
 
 		var remaining_time = splitTime( this.clock.displayed_remaining_time());
 

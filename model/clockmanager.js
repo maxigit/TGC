@@ -4,6 +4,8 @@ const RUNNING = 1;
 const PAUSED = 2;
 const STOPPED = 3;
 
+const STATE_STR = ["UNINITIALED", "RUNNING", "PAUSED", "STOPPED"];
+
 function ClockManager()
 {
 	this.players = new Array();

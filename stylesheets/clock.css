@@ -2,9 +2,10 @@ body {
 	font-size: 20px;
 	text-align: center;
 }
-.player_clock_0 .player_clock_1 .player_clock_2{
+.player_clock {
 	padding: 5px;
 	-moz-border-radius: 10px;
+	border: 1px;
 }
 .player_clock_2 {
 	//background-color: #eee;
@@ -13,11 +14,9 @@ body {
 .active_player_clock_1 .active_player_clock_2 {
 	font-size 20px;
 }
-.active_player_clock_1 {
+.active_clock {
 	background-color: #dfd;
 	border: 1px solid #080;
-	-moz-border-radius: 10px;
-	padding: 5px;
 }
 
 .active_player_clock_2 .active_player_clock_2 {
