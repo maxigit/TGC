@@ -5,7 +5,7 @@ body {
 .player_clock {
 	padding: 5px;
 	-moz-border-radius: 10px;
-	border: 1px;
+	border: 2px solid #fff;
 }
 .player_clock_2 {
 	//background-color: #eee;
@@ -16,14 +16,12 @@ body {
 }
 .active_clock {
 	background-color: #dfd;
-	border: 1px solid #080;
+	border: 2px solid #080;
 }
 
-.active_player_clock_2 .active_player_clock_2 {
+.PAUSED_clock.active_clock {
 	background-color: #ddd;
-	border: 1px solid #888;
-	-moz-border-radius: 10px;
-	padding: 5px;
+	border: 2px solid #888;
 }
 
 .remaining_time {
