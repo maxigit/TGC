@@ -7,9 +7,10 @@ body {
 	padding: 5px;
 	-moz-border-radius: 10px;
 	border: 2px solid #fff;
+	background-color: #ddf;
 }
-.player_clock_2 {
-	//background-color: #eee;
+.player_clock.PAUSED_clock {
+	background-color: #ddd;
 }
 
 .active_player_clock_1 .active_player_clock_2 {
