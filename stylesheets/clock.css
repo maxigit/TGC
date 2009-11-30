@@ -1,7 +1,7 @@
 body {
 	font-size: 20px;
 	text-align: center;
-	color : #555;
+	color: #444;
 }
 .player_clock {
 	padding: 5px;
@@ -25,10 +25,16 @@ body {
 	background-color: #ddd;
 	border: 2px solid #888;
 }
+.PAUSED_clock {
+	color: #666;
+}
 
 .remaining_time {
 	font-size:  50px;
 }
-.active_clock .remaining_time {
+.move {
+	font-size:  30px;
+}
+.active_clock .remaining_time , .active_clock .move {
 	color: black;
 }
