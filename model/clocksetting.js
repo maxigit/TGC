@@ -16,7 +16,7 @@
 //times are in second.
 function ClockSetting()
 {
-	this.initial_time = 30*60*1000;
+	this.initial_time = 40*60*1000;
 	this.byo_move = 1
 	this.byo_time = 30;
 	this.byo_period = 5;

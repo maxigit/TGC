@@ -16,9 +16,9 @@ function PlayerClockController(clock, clock_div)
 	{
 		this.div.className = this.div_className +(active ? " active_clock" : " ") +" " + STATE_STR[state]+"_clock";
 
-		var remaining_time = splitTime( this.clock.displayed_remaining_time());
+		var remaining_time = split_time( this.clock.displayed_remaining_time());
 
-		this.remaining_time_label.textContent= pad_int(remaining_time.hour, 2)+":"+pad_int(remaining_time.sec, 2) ;
+		this.remaining_time_label.textContent= pad_int(remaining_time.min, 2)+":"+pad_int(remaining_time.sec, 2) ;
 
 
 
@@ -54,7 +54,7 @@ function PlayerClockController(clock, clock_div)
 	};
 }
 
-function splitTime(time)
+function split_time(time)
 {
 	var a = new Object();
 	a.milli = time % 10;
@@ -72,6 +72,10 @@ function splitTime(time)
 
 	a.sec = time % 60;
 	time -= a.sec;
+	time /= 60;
+
+	a.min = time % 60;
+	time -= a.min;
 	time /= 60;
 
 	a.hour = time % 60;

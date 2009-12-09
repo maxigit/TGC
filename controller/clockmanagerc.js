@@ -5,6 +5,7 @@
 // Instanciating the ClockManagaer
 var clock_manager = new ClockManager();
 var clock_controllers = new Array();
+var setting_controller_map = new Array();
 	
 //Installing event
 document.onkeydown= on_key;
@@ -53,6 +54,8 @@ function process_event(key, date)
 	else if (key == Key_r) //R
 	{
 		clock_manager.reset();
+		reset_setting_controller();
+		
 	}
 	else if (key == Key_p) //P
 	{
@@ -69,6 +72,14 @@ function process_event(key, date)
 
 }
 
+function reset_setting_controller()
+{
+	for (i in setting_controller_map)
+	{
+		setting_controller_map[i].update_div();
+	}
+}
+
 function add_clock(clock_id, config_id)
 {
 	var clock_div = document.getElementById(clock_id);
@@ -79,13 +90,14 @@ function add_clock(clock_id, config_id)
 			alert("Can't find div ["+clock_id+"]");
 	}
 
-	var config = null; // new clockconfig();
+	var config = setting_controller_map[config_id]; // new clockconfig();
 	var clock = clock_manager.new_player(config);
 
 	var clock_controller = new PlayerClockController(clock, clock_div);
 	clock_controllers.push(clock_controller);
 
-
+	var setting_controller = new ClockSettingController(clock.config, config_div); 
+	setting_controller_map[config_id] = setting_controller;
 }
 
 function update_clock_controllers()
