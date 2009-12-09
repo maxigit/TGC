@@ -8,8 +8,23 @@ function ClockSettingController(setting, setting_div)
 	
 	this.update_setting = function()
 	{
+		var time = 0;
+		if (this.initial_hour_input)
+		{
+			time += this.initia_hour_input*60*60*1000;
+		}
 
+		if (this.initial_min_input)
+		{
+			time += this.initia_min_input*60*1000;
+		}
 
+		if (this.initial_sec_input)
+		{
+			time += this.initia_sec_input*1000;
+		}
+
+		this.config.initial_time = time;
 	}
 
 	this.update_div = function()
@@ -30,6 +45,7 @@ function ClockSettingController(setting, setting_div)
 	}
 
 	this.update_div();
+	this.div.onchange = "on_config_change("+setting_div.id+");"; 
 }
 
 

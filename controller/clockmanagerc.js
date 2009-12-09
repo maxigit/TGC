@@ -136,3 +136,8 @@ function reset_focus()
 		parent.focus();
 	}
 }
+
+function on_setting_change(setting_id)
+{
+	setting_controller_map[setting_id].update_setting();
+}
