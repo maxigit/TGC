@@ -90,7 +90,8 @@ function add_clock(clock_id, config_id)
 			alert("Can't find div ["+clock_id+"]");
 	}
 
-	var config = setting_controller_map[config_id]; // new clockconfig();
+	var config_controller = setting_controller_map[config_id]; // new clockconfig();
+	var config = config_controller ? config_controller.config : null;
 	var clock = clock_manager.new_player(config);
 
 	var clock_controller = new PlayerClockController(clock, clock_div);
