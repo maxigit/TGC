@@ -139,5 +139,6 @@ function reset_focus()
 
 function on_setting_change(change)
 {
-	change.currentTarget.setting_controller.update_setting();
+	change.currentTarget.setting_controller. update_setting();
+	process_event(Key_r);
 }

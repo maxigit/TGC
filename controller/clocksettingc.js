@@ -11,17 +11,17 @@ function ClockSettingController(setting, setting_div)
 		var time = 0;
 		if (this.initial_hour_input)
 		{
-			time += this.initia_hour_input*60*60*1000;
+			time += this.initial_hour_input.value*60*60*1000;
 		}
 
 		if (this.initial_min_input)
 		{
-			time += this.initia_min_input*60*1000;
+			time += this.initial_min_input.value*60*1000;
 		}
 
 		if (this.initial_sec_input)
 		{
-			time += this.initia_sec_input*1000;
+			time += this.initial_sec_input.value*1000;
 		}
 
 		this.setting.initial_time = time;
