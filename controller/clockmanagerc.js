@@ -91,7 +91,7 @@ function add_clock(clock_id, config_id)
 	}
 
 	var config_controller = setting_controller_map[config_id]; // new clockconfig();
-	var config = config_controller ? config_controller.config : null;
+	var config = config_controller ? config_controller.setting: null;
 	var clock = clock_manager.new_player(config);
 
 	var clock_controller = new PlayerClockController(clock, clock_div);
