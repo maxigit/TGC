@@ -137,7 +137,7 @@ function reset_focus()
 	}
 }
 
-function on_setting_change(setting_id)
+function on_setting_change(change)
 {
-	setting_controller_map[setting_id].update_setting();
+	change.currentTarget.setting_controller.update_setting();
 }

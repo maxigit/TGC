@@ -24,7 +24,7 @@ function ClockSettingController(setting, setting_div)
 			time += this.initia_sec_input*1000;
 		}
 
-		this.config.initial_time = time;
+		this.setting.initial_time = time;
 	}
 
 	this.update_div = function()
@@ -44,8 +44,19 @@ function ClockSettingController(setting, setting_div)
 		}
 	}
 
+	this.set_onchange_method = function(input)
+	{
+		if (input)
+		{
+			input.onchange = on_setting_change;
+			input.setting_controller = this;
+		}
+	}
+
 	this.update_div();
-	this.div.onchange = "on_config_change("+setting_div.id+");"; 
+	this.set_onchange_method(this.initial_hour_input);
+	this.set_onchange_method(this.initial_min_input);
+	this.set_onchange_method(this.initial_sec_input);
 }
 
 
