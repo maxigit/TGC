@@ -128,6 +128,11 @@ function pause()
 	process_event(Key_p);
 }
 
+function toggle()
+{
+	process_event(32);
+}
+
 
 function reset_focus()
 {
