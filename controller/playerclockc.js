@@ -64,7 +64,7 @@ function PlayerClockController(clock, clock_div)
 
 	this.get_alert_state = function(remaining_time)
 	{
-		if (remaining_time.total_sec > 10)
+		if (remaining_time.total_sec > 11)
 		{
 			return 0;
 		}
