@@ -5,8 +5,10 @@ function ClockSettingController(setting, setting_div)
 	this.initial_hour_input = this.div.getElementsByClassName('initial_hour')[0];
 	this.initial_min_input = this.div.getElementsByClassName('initial_min')[0];
 	this.initial_sec_input = this.div.getElementsByClassName('initial_sec')[0];
+	this.validate_button = this.div.getElementsByClassName('validate')[0];
+	this.add_button = this.div.getElementsByClassName('add_time')[0];
 	
-	this.update_setting = function()
+	this.get_input_time = function()
 	{
 		var time = 0;
 		if (this.initial_hour_input)
@@ -23,8 +25,17 @@ function ClockSettingController(setting, setting_div)
 		{
 			time += this.initial_sec_input.value*1000;
 		}
+		return time;
 
-		this.setting.initial_time = time;
+	}
+	this.update_setting = function()
+	{
+		this.setting.initial_time = this.get_input_time();
+	}
+
+	this.add_setting = function()
+	{
+		this.setting.initial_time += this.get_input_time();
 	}
 
 	this.update_div = function()
@@ -57,9 +68,34 @@ function ClockSettingController(setting, setting_div)
 	}
 
 	this.update_div();
+
+	if (this.validate_button)
+	{
+		this.validate_button.controller = this;
+		this.validate_button.onclick = function()
+		{
+			this.controller.update_setting();
+			//this.controller.update_div();
+
+			reset();
+		}
+	}
+	else
+	{
 	this.set_onchange_method(this.initial_hour_input);
 	this.set_onchange_method(this.initial_min_input);
 	this.set_onchange_method(this.initial_sec_input);
+	}
+	if (this.add_button)
+	{
+		this.add_button.controller = this;
+		this.add_button.onclick = function()
+		{
+			this.controller.add_setting();
+			// TODO add time on clock instead ot setting if running.
+			pause();
+		}
+	}
 }
 
 

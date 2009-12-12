@@ -53,8 +53,16 @@ function process_event(key, date)
 	}
 	else if (key == Key_r) //R
 	{
+		if (clock_manager.stats == RUNNING)
+		{
+			// pause 
+			pause();
+		}
+		else
+		{
 		clock_manager.reset();
 		reset_setting_controller();
+		}
 		
 	}
 	else if (key == Key_p) //P
@@ -142,8 +150,8 @@ function reset_focus()
 	}
 }
 
-function on_setting_change(change)
+function on_setting_change(controller)
 {
-	change.currentTarget.setting_controller. update_setting();
+	controller. update_setting();
 	process_event(Key_r);
 }
