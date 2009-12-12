@@ -62,7 +62,9 @@ function ClockSettingController(setting, setting_div)
 			input.setting_controller = this;
 			input.onchange = function()
 			{
+				this.setting_controller.update_setting();
 				this.setting_controller.update_div();
+				reset();
 			}
 		}
 	}
