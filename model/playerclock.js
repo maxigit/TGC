@@ -19,6 +19,11 @@ function PlayerClock(config)
 		this.move_number = 0;
 	}
 
+	this.freeze = function()
+	{
+		this.config.initial_time = this.remaining_time;
+	}
+
 	this.consume_time = function(time)
 	{
 		// all the intelligence of the clock

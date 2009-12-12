@@ -94,4 +94,13 @@ function ClockManager()
 		this.active_player.next_move();
 
 	}
+
+	this.freeze = function (date)
+	{
+		this.ontick(date);
+		for (i in this.players)
+		{
+			this.players[i].freeze();
+		}
+	}
 }

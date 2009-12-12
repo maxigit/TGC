@@ -13,6 +13,7 @@ document.onkeydown= on_key;
 const Key_r = 82;
 const Key_s = 83;
 const Key_p = 80;
+const Key_z = 91;
 function on_key(e)
 {
 	var date = new Date()
@@ -75,6 +76,13 @@ function process_event(key, date)
 			clock_manager.resume(date);
 		}
 
+	}
+	else if (key == Key_z) //Z
+	{
+		// Freeze, we pause and copy the remaining time to the setting.
+		clock_manager.freeze(date);
+		clock_manager.pause(date);
+		reset_setting_controller();
 	}
 
 	update_clock_controllers();
@@ -140,6 +148,11 @@ function pause()
 function toggle()
 {
 	process_event(32);
+}
+
+function freeze()
+{
+	process_event(Key_z);
 }
 
 
