@@ -51,12 +51,32 @@ function PlayerClockController(clock, clock_div)
 
 		this.move_label.textContent = pad_int( this.clock.move_number, 2);
 
+		var alert = this.get_alert_state(remaining_time);
+		if (alert > 0)
+		{
+			this.div.className += " alert alert_"+alert;
+		}
+		else {
+			this.div.className += " no_alert";
+		}
+
 	};
+
+	this.get_alert_state = function(remaining_time)
+	{
+		if (remaining_time.total_sec > 10)
+		{
+			return 0;
+		}
+
+		return 10-remaining_time.dec
+	}
 }
 
 function split_time(time)
 {
 	var a = new Object();
+	a.total_sec= time/1000;
 	a.milli = time % 10;
 	time -= a.milli;
 	time /= 10;

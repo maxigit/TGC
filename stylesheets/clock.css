@@ -36,6 +36,10 @@ body {
 .move {
 	font-size:  30px;
 }
-.active_clock .remaining_time , .active_clock .move {
+.active_clock.no_alert .remaining_time , .active_clock.no_alert .move {
 	color: black;
+}
+
+.active_clock.alert {
+	color: red;
 }
