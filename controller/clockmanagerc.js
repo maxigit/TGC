@@ -60,9 +60,10 @@ function process_event(key, date)
 		}
 		else
 		{
+		
 		clock_manager.reset();
-		reset_setting_controller();
 		}
+		reset_setting_controller();
 		
 	}
 	else if (key == Key_p) //P
