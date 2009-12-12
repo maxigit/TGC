@@ -36,10 +36,17 @@ body {
 .move {
 	font-size:  30px;
 }
-.active_clock.no_alert .remaining_time , .active_clock.no_alert .move {
+.active_clock .remaining_time , .active_clock .move {
 	color: black;
 }
 
 .active_clock.alert {
+	background-color: #fdd;
+	border: 2px solid #800;
+	color: #600;
+}
+.active_clock.alert_1 .remaining_time , .active_clock.alert_1 .move {
 	color: red;
 }
+.active_clock.alert_2 .remaining_time , .active_clock.alert_2 .move {
+	color: #d00 ;
