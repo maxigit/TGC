@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>
+			The Gaming Clock
+		</title>
+		<link rel="Stylesheet" type="text/css" HREF="stylesheets/clock.css" media="all">
+		<script src="model/playerclock.js" type="text/javascript"></script>
+		<script src="model/clocksetting.js" type="text/javascript"></script>
+		<script src="model/clockmanager.js" type="text/javascript"></script>
+		<script src="controller/playerclockc.js" type="text/javascript"></script>
+		<script src="controller/clockmanagerc.js" type="text/javascript"></script>
+		<script src="controller/clocksettingc.js" type="text/javascript"></script>
+	</head>
+	<body >
+		<div class='clock_config' id = 'config1'>
+			<label>Initial Time</label>
+			<input class="initial_min" value=30 onchange="on_setting_change();">:
+			<input class="initial_sec" value="00"t>
+		</div>
+		<div class='clock_config' id = 'config2'>
+			<label>Initial Time</label>
+			<input class="initial_min" value=30 onchange="on_setting_change();">:
+			<input class="initial_sec" value="00"t>
+		</div>
+		<table width=500>
+			<colgroup span="2" width =33%>
+			<tr>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+
+				<div class='player_clock' id = 'player1'>
+					<h2>Player 1</h2>
+					Remaining Time : <label class='remaining_time'></label>.<label class='remaining_dec'></label>
+					<br/>
+					Move : <label/ class='move'>
+					</div>
+				</td>
+				<td>
+					<div class='player_clock' id = 'player2'>
+						<h2>Player 2</h2>
+						Remaining Time : <label class='remaining_time'></label>.<label class='remaining_dec'></label>
+						<br/>
+						Move : <label/ class='move'>
+						</div>
+
+						<div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="reset();">Reset</button>
+						<button onclick="start();">Start</button>
+						<button onclick="toggle();">Toggle</button>
+						<button onclick="pause();">Pause</button>
+				       	</td>
+					<tr> </table>
+				</body>
+			</html>
+			<script type="text/javascript>
+				add_clock('player1', 'config1')
+				add_clock('player2', 'config2')
+
+				setInterval('on_key(null);', 50)
+			</script>
