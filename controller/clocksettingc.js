@@ -46,10 +46,13 @@ function ClockSettingController(setting, setting_div)
 
 	this.set_onchange_method = function(input)
 	{
-		if (input)
+		if (input && input.setting_controller == undefined)
 		{
-			input.onchange = on_setting_change;
 			input.setting_controller = this;
+			input.onchange = function()
+			{
+				this.setting_controller.update_div();
+			}
 		}
 	}
 
