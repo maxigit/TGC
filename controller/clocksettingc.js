@@ -75,7 +75,7 @@ function ClockSettingController(setting, setting_div)
 		this.validate_button.onclick = function()
 		{
 			this.controller.update_setting();
-			//this.controller.update_div();
+			this.controller.update_div();
 
 			reset();
 		}
@@ -93,7 +93,7 @@ function ClockSettingController(setting, setting_div)
 		{
 			this.controller.add_setting();
 			// TODO add time on clock instead ot setting if running.
-			pause();
+			reset();
 		}
 	}
 }
