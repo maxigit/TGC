@@ -30,6 +30,9 @@ body {
 	color: #666;
 }
 
+.PAUSED_clock.alert {
+	color: #866;
+}
 .remaining_time {
 	font-size:  50px;
 }
@@ -45,8 +48,6 @@ body {
 	border: 2px solid #800;
 	color: #600;
 }
-.active_clock.alert_1 .remaining_time , .active_clock.alert_1 .move {
-	color: red;
+.active_clock.alert_1, .active_clock.alert_2, .active_clock.alert_30 {
+	background-color: #f88;
 }
-.active_clock.alert_2 .remaining_time , .active_clock.alert_2 .move {
-	color: #d00 ;
