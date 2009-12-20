@@ -16,6 +16,8 @@ function PlayerClock(config)
 		// copy the initial config to th actual parameters
 		this.remaining_time = this.config.initial_time;
 		//TODO byo=yomi
+	this.remaining_byo_move = this.config.byo_move;
+	this.remaining_byo_period = 5;
 		this.move_number = 0;
 	}
 
@@ -37,7 +39,7 @@ function PlayerClock(config)
 
 			var overtime = time = this.remaining_time;
 			this.remaining_time = 0;
-			return manage_overtime(overtime);
+			return this.manage_overtime(overtime);
 		}
 	}
 
