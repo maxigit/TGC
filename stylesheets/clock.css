@@ -45,7 +45,8 @@ body {
 	border: 2px solid #800;
 	color: #600;
 }
-.active_clock.alert_1, .active_clock.alert_2, .active_clock.alert_30 {
+.RUNNING_clock.active_clock.alert_1, .RUNNING_clock.active_clock.alert_2, .RUNNING_clock.active_clock.alert_30 {
+
 	background-color: #f88;
 }
 .PAUSED_clock.alert, .PAUSED_clock.alert .remaining_time, .PAUSED_clock.alert .move {
