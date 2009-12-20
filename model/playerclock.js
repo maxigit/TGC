@@ -59,13 +59,7 @@ function PlayerClock(config)
 			this.remaining_time -= time;
 			return  OK
 		}
-		else // trouble
-		{
 
-			var overtime = time - this.remaining_time;
-			this.remaining_time = 0;
-			return this.manage_overtime(overtime);
-		}
 	}
 
 	this.manage_overtime = function(overtime)
@@ -83,6 +77,10 @@ function PlayerClock(config)
 	this.next_move = function()
 	{
 		this.move_number += 1;
+		if (this.state == BYOYOMI)
+		{
+			this.byo_remaining_move -= 1;
+		}
 	}
 
 	this.displayed_remaining_time = function()
