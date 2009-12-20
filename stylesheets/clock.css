@@ -9,7 +9,7 @@ body {
 	border: 2px solid #fff;
 	background-color: #ddf;
 }
-.player_clock.PAUSED_clock {
+.active_clock.player_clock.PAUSED_clock {
 	background-color: #ddd;
 }
 
@@ -49,6 +49,6 @@ body {
 
 	background-color: #f88;
 }
-.PAUSED_clock.alert, .PAUSED_clock.alert .remaining_time, .PAUSED_clock.alert .move {
+.active_clock.PAUSED_clock.alert, .active_clock.PAUSED_clock.alert .remaining_time, .active_clock.PAUSED_clock.alert .move {
 	color: #866;
 }
