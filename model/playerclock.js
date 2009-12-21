@@ -41,19 +41,18 @@ function PlayerClock(config)
 			{
 				this.state = BYOYOMI;
 			}
-			if (this.remaining_byo_period > 0 && this.remaining_byo_move>0)
+			if (this.remaining_byo_period > 0 && this.remaining_byo_move>1)
 			{
 				this.remaining_byo_period-=1;
 			}
 			else // byo yomi elapsed
 			{
-				return this.manage_overtime(overtime);
+				// this.manage_overtime(overtime);
+				return END_OF_TIME;
 			}
 
-			//set reset current byo-yomi
-			this.remaining_time = this.config.byo_time;
-			this.remaining_byo_move = this.config.byo_move;
-				//loop
+			this.reset_current_byo();
+			//loop
 		}
 		// all the intelligence of the clock
 		if (time < this.remaining_time)
@@ -64,16 +63,14 @@ function PlayerClock(config)
 
 	}
 
+	this.reset_current_byo = function()
+	{
+		this.remaining_time = this.config.byo_time;
+		this.remaining_byo_move = this.config.byo_move;
+	}
+
 	this.manage_overtime = function(overtime)
 	{
-		// we manage the byo yomi here
-		if (this.remaining_byo_move)
-		{
-			this.remaining_time = this.config.byo_time;
-			this.state = BYOYOMI;
-		}
-		if (this.remaining_time)
-			return END_OF_TIME;
 	}
 
 	this.next_move = function()
@@ -82,6 +79,10 @@ function PlayerClock(config)
 		if (this.state == BYOYOMI)
 		{
 			this.byo_remaining_move -= 1;
+			if (this.byo_remaining_move == 0)
+			{
+				this.reset_current_byo();
+			}
 		}
 	}
 
