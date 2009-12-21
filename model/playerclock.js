@@ -70,7 +70,7 @@ function PlayerClock(config)
 			this.remaining_time = this.config.byo_time;
 			this.state = BYOYOMI;
 		}
-		if this.remaining_time
+		if (this.remaining_time)
 			return END_OF_TIME;
 	}
 
