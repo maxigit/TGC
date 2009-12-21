@@ -44,8 +44,8 @@ function PlayerClock(config)
 			}
 			else if (this.remaining_byo_period > 0)
 			{
-				this.byo_period-=1;
-				this.byo_remaining_move = this.config.byo_move;
+				this.remaining_byo_period-=1;
+				this.remaining_byo_move = this.config.byo_move;
 				//loop
 			}
 			else // byo yomi elapsed
