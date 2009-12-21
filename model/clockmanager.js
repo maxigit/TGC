@@ -96,7 +96,7 @@ function ClockManager()
 		var next_index = this.get_next_active_player_index();
 		if(this.active_player && this.state == RUNNING)
 		{
-			this.active_player.end_of_move():
+			this.active_player.end_of_move();
 		}
 		this.active_player = this.players[next_index];
 		this.active_player.next_move();
