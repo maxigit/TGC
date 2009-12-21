@@ -41,7 +41,7 @@ function PlayerClock(config)
 			{
 				this.state = BYOYOMI;
 			}
-			if (this.remaining_byo_period > 0 && this.remaining_byo_move>1)
+			if (this.remaining_byo_period > 0 && this.remaining_byo_move>0)
 			{
 				this.remaining_byo_period-=1;
 			}
@@ -76,10 +76,14 @@ function PlayerClock(config)
 	this.next_move = function()
 	{
 		this.move_number += 1;
+	}
+	
+	this.end_of_move = function()
+	{
 		if (this.state == BYOYOMI)
 		{
-			this.byo_remaining_move -= 1;
-			if (this.byo_remaining_move == 0)
+			this.remaining_byo_move -= 1;
+			if (this.remaining_byo_move == 0)
 			{
 				this.reset_current_byo();
 			}
