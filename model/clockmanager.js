@@ -87,9 +87,13 @@ function ClockManager()
 			this.state = RUNNING;
 	}
 
+	this.get_next_active_player_index = function()
+	{
+		return this.players[0] == this.active_player ? 1 : 0;
+	}
 	this.toggle_player = function(date)
 	{
-		var next_index = this.players[0] == this.active_player ? 1 : 0;
+		var next_index = this.get_next_active_player_index();
 		this.active_player = this.players[next_index];
 		this.active_player.next_move();
 
