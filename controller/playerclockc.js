@@ -10,6 +10,9 @@ function PlayerClockController(clock, clock_div)
 	this.wheel_label=  this.div.getElementsByClassName('wheel')[0];
 	this.move_label=  this.div.getElementsByClassName('move')[0];
 
+	this.remaining_byo_move_label = this.getElementsByClassName('byo_move')[0];
+	this.remaining_byo_period_label = this.getElementsByClassName('byo_period')[0];
+
 	//init
 
 	this.update = function(active, state)
@@ -29,16 +32,6 @@ function PlayerClockController(clock, clock_div)
 
 		if(this.wheel_label)
 		{
-			var cent = remaining_time.dec*10+remaining_time.cent;
-			cent = (100-cent)%100;
-			var wheelchar = '|';
-			if(cent > 75) {
-				wheelchar = '\\';
-			}
-			else if (cent > 50)
-			{
-				wheelchar = '--';
-			}
 			else if (cent > 25)
 			{
 				wheelchar = '/';
@@ -50,6 +43,12 @@ function PlayerClockController(clock, clock_div)
 		}
 
 		this.move_label.textContent = pad_int( this.clock.move_number, 2);
+		if (this.remaining_byo_move_label) // update all byo-yomi fields
+		{
+			this.remaining_byo_move_label.textContent = this.clock.remaining_byo_move;
+			this.remaining_byo_period_label.textContent = this.clock.remaining_byo_period;
+
+		}
 
 		var alert = this.get_alert_state(remaining_time);
 		if (alert > 0)
