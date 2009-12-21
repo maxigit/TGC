@@ -35,13 +35,14 @@ function PlayerClock(config)
 		while (time > this.remaining_time)
 		{
 			//if (this.state == NORMAL
-			if (this.remaining_byo_move)
+			if (this.remaining_byo_move > 0)
 			{
 				time  -= this.remaining_time;
 				this.state = BYOYOMI;
 				this.remaining_time = this.config.byo_time;
+				this.remaining_byo_move -= 1;
 			}
-			else if (this.byo_period > 0)
+			else if (this.remaining_byo_period > 0)
 			{
 				this.byo_period-=1;
 				this.byo_remaining_move = this.config.byo_move;
