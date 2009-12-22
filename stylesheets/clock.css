@@ -24,6 +24,8 @@ body {
 .clock_config input {
 	border: 1px solid #730;
 	width: 2em;
+	font-size: inherit;
+	text-align: right;
 }
 /* Player Clock */
 .player_clock {
