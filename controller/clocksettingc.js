@@ -57,13 +57,13 @@ function ClockSettingController(setting, setting_div)
 		}
 		if (this.initial_sec_input)
 		{
-			this.initial_sec_input.value = initial_time.sec;
+			this.initial_sec_input.value = pad_int(initial_time.sec, 2);
 		}
 		if (this.byo_min_input)
 		{
 			var byo_time = split_time(this.setting.byo_time);
 			this.byo_min_input.value = byo_time.min;
-			this.byo_sec_input.value = byo_time.sec;
+			this.byo_sec_input.value = pad_int(byo_time.sec, 2);
 			this.byo_move_input.value = this.setting.byo_move;
 			this.byo_period_input.value = this.setting.byo_period;
 		}
