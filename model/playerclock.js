@@ -28,6 +28,8 @@ function PlayerClock(config)
 	this.freeze = function()
 	{
 		this.config.initial_time = this.remaining_time;
+		this.config.byo_period = this.remaining_byo_period;
+		this.confid.byo_move = this.remaining_byo_move;
 	}
 
 	this.consume_time = function(time)
