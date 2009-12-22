@@ -14,8 +14,10 @@ body {
 
 /* Setting */
 .clock_config {
-
-	background-color: #DFDBC8;
+	background-color: #E8E0B2;
+}
+.clock_config label {
+	color: #830;
 }
 /* Player Clock */
 .player_clock {
