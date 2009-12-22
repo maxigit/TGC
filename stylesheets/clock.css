@@ -17,6 +17,7 @@ body {
 .clock_config {
 	color: #730;
 	background-color: #E8E0B2;
+	text-align: left;
 }
 .clock_config label {
 	color: #730;
