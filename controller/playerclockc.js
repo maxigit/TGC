@@ -55,7 +55,10 @@ function PlayerClockController(clock, clock_div)
 		this.move_label.textContent = pad_int( this.clock.move_number, 2);
 		if (this.remaining_byo_move_label) // update all byo-yomi fields
 		{
-			this.remaining_byo_move_label.textContent = this.clock.remaining_byo_move;
+			if(this.clock.state == BYOYOMI)
+				this.remaining_byo_move_label.textContent = pad_int(this.clock.remaining_byo_move, 2);
+			else
+				this.remaining_byo_move_label.textContent = "--";
 			this.remaining_byo_period_label.textContent = this.clock.remaining_byo_period;
 
 		}
