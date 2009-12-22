@@ -1,13 +1,16 @@
+/* Common */
 body {
 	font-size: 20px;
 	text-align: center;
 	color: #444;
 }
+/* Player Clock */
 .player_clock {
 	padding: 5px;
 	-moz-border-radius: 10px;
 	border: 2px solid #fff;
 	background-color: #ddf;
+
 }
 .active_clock.player_clock.PAUSED_clock {
 	background-color: #ddd;
