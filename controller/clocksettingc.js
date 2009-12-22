@@ -5,6 +5,11 @@ function ClockSettingController(setting, setting_div)
 	this.initial_hour_input = this.div.getElementsByClassName('initial_hour')[0];
 	this.initial_min_input = this.div.getElementsByClassName('initial_min')[0];
 	this.initial_sec_input = this.div.getElementsByClassName('initial_sec')[0];
+
+	this.byo_move_input = this.div.getElementsByClassName('byo_move')[0];
+	this.byo_time_input = this.div.getElementsByClassName('byo_time')[0];
+	this.byo_period_input = this.div.getElementsByClassName('byo_period')[0];
+
 	this.validate_button = this.div.getElementsByClassName('validate')[0];
 	this.add_button = this.div.getElementsByClassName('add_time')[0];
 	
