@@ -7,8 +7,8 @@ function ClockSettingController(setting, setting_div)
 	this.initial_sec_input = this.div.getElementsByClassName('initial_sec')[0];
 
 	this.byo_move_input = this.div.getElementsByClassName('byo_move')[0];
-	this.byo_time_min_input = this.div.getElementsByClassName('byo_min_time')[0];
-	this.byo_time_sec_input = this.div.getElementsByClassName('byo_sec_time')[0];
+	this.byo_min_input = this.div.getElementsByClassName('byo_min')[0];
+	this.byo_sec_input = this.div.getElementsByClassName('byo_sec')[0];
 	this.byo_period_input = this.div.getElementsByClassName('byo_period')[0];
 
 	this.validate_button = this.div.getElementsByClassName('validate')[0];
@@ -59,11 +59,11 @@ function ClockSettingController(setting, setting_div)
 		{
 			this.initial_sec_input.value = initial_time.sec;
 		}
-		if (this.byo_time_min_input)
+		if (this.byo_min_input)
 		{
 			var byo_time = split_time(this.setting.byo_time);
-			this.byo_time_min_input.value = byo_time.min;
-			this.byo_time_sec_input.value = byo_time.sec;
+			this.byo_min_input.value = byo_time.min;
+			this.byo_sec_input.value = byo_time.sec;
 			this.byo_move_input.value = this.setting.byo_move;
 			this.byo_period_input.value = this.setting.byo_period;
 		}
