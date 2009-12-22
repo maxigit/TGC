@@ -7,6 +7,7 @@ body {
 .player_clock,  .clock_config {
 	padding: 5px;
 	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	border: 2px solid #fff;
 
 
