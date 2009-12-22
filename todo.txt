@@ -1,0 +1,9 @@
+put settings into table
+- css
+
+add copy button between setting 1 and 2
+
+add byo-yomi state class
+
+organize css
+
