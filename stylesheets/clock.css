@@ -14,10 +14,16 @@ body {
 
 /* Setting */
 .clock_config {
+	color: #730;
 	background-color: #E8E0B2;
 }
 .clock_config label {
 	color: #730;
+}
+
+.clock_config input {
+	border: 1px solid #730;
+	width: 20px;
 }
 /* Player Clock */
 .player_clock {
