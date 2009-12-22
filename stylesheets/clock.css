@@ -4,11 +4,21 @@ body {
 	text-align: center;
 	color: #444;
 }
-/* Player Clock */
-.player_clock {
+.player_clock,  .clock_config {
 	padding: 5px;
 	-moz-border-radius: 10px;
 	border: 2px solid #fff;
+
+
+}
+
+/* Setting */
+.clock_config {
+
+	background-color: #DFDBC8;
+}
+/* Player Clock */
+.player_clock {
 	background-color: #ddf;
 
 }
