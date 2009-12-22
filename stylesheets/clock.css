@@ -23,7 +23,7 @@ body {
 
 .clock_config input {
 	border: 1px solid #730;
-	width: 20px;
+	width: 2em;
 }
 /* Player Clock */
 .player_clock {
