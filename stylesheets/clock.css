@@ -25,6 +25,8 @@ body {
 
 .clock_config input {
 	border: 1px solid #730;
+	noooo-moz-border-radius: 5px;
+	padding: 2px;
 	width: 2em;
 	font-size: inherit;
 	text-align: right;
