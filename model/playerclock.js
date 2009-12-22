@@ -32,34 +32,38 @@ function PlayerClock(config)
 
 	this.consume_time = function(time)
 	{
-		while (time > this.remaining_time)
+		// all the intelligence of the clock
+		while (time >= this.remaining_time)
 		{
 			time  -= this.remaining_time;
 			this.remaining_time = 0;
 
+			var reset = false;
 			if (this.state == NORMAL) // we start the byo-yomi
 			{
 				this.state = BYOYOMI;
+				reset = true;
 			}
-			if (this.remaining_byo_period > 0 && this.remaining_byo_move>0)
+			else if (this.remaining_byo_period > 0 && this.remaining_byo_move>0)
 			{
+				// one extra period has been consume
 				this.remaining_byo_period-=1;
-			}
-			else // byo yomi elapsed
-			{
-				// this.manage_overtime(overtime);
-				return END_OF_TIME;
+
+				reset = true;
 			}
 
-			this.reset_current_byo();
-			//loop
+			if (reset)
+			{
+				this.reset_current_byo();
+				//loop
+			}
+			else 
+			{
+				break;
+			}
 		}
-		// all the intelligence of the clock
-		if (time < this.remaining_time)
-		{
-			this.remaining_time -= time;
-			return  OK
-		}
+		this.remaining_time -= time;
+		return this.remaining_time > 0 ?  OK : END_OF_TIME;
 
 	}
 

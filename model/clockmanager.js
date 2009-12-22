@@ -63,7 +63,10 @@ function ClockManager()
 			var duration = date.getTime() - this.last_time.getTime();
 			if (this.active_player)
 			{
-				this.active_player.consume_time(duration);
+				if (this.active_player.consume_time(duration) == END_OF_TIME)
+				{
+					this.end_of_time();
+				}
 			}
 		}
 		this.last_time = date;
