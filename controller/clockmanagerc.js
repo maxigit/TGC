@@ -169,3 +169,11 @@ function on_setting_change(controller)
 	controller.update_setting();
 	process_event(Key_r);
 }
+
+function copy_html(src_id, dst_id)
+{
+	var src_div= document.getElementById(src_id);
+	var dst_div= document.getElementById(dst_id);
+
+	dst_div.innerHTML = src_div.innerHTML;
+}
