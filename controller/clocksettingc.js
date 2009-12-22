@@ -58,6 +58,12 @@ function ClockSettingController(setting, setting_div)
 		{
 			this.initial_sec_input.value = initial_time.sec;
 		}
+		if (this.byo_time_input)
+		{
+			this.byo_time_input.value = this.setting.byo_time;
+			this.byo_move_input.value = this.setting.byo_move;
+			this.byo_period_input.value = this.setting.byo_period;
+		}
 	}
 
 	this.set_onchange_method = function(input)
