@@ -120,9 +120,9 @@ function ClockSettingController(setting, setting_div)
 	}
 	else
 	{
-	this.set_onchange_method(this.initial_hour_input);
-	this.set_onchange_method(this.initial_min_input);
-	this.set_onchange_method(this.initial_sec_input);
+		this.set_onchange_method(this.initial_hour_input);
+		this.set_onchange_method(this.initial_min_input);
+		this.set_onchange_method(this.initial_sec_input);
 	}
 	if (this.add_button)
 	{
