@@ -25,6 +25,11 @@ function ClockSetting()
 
 	this.copy_from = function(setting)
 	{
+		if (setting == this)
+		{
+			return;
+		}
+
 		this.initial_time = setting.initial_time;
 		this.byo_move = setting.byo_move;
 		this.byo_time = setting.byo_time;
