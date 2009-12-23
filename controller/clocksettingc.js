@@ -14,6 +14,7 @@ function ClockSettingController(setting, setting_div)
 	this.validate_button = this.div.getElementsByClassName('validate')[0];
 	this.add_button = this.div.getElementsByClassName('add_time')[0];
 	this.copy_button = this.div.getElementsByClassName('copy')[0];
+	this.refresh_button = this.div.getElementsByClassName('refresh')[0];
 	
 	this.get_input_time = function()
 	{
@@ -143,7 +144,15 @@ function ClockSettingController(setting, setting_div)
 			this.controller.update_setting();
 			copy_setting_to_all(setting);
 		}
+	}
 
+	if (this.refresh_button)
+	{
+		this.refresh_button.controller = this;
+		this.refresh_button.onclick = function()
+		{
+			this.controller.update_div();
+		}
 	}
 }
 
