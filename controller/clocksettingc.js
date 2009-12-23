@@ -34,9 +34,31 @@ function ClockSettingController(setting, setting_div)
 		return time;
 
 	}
+	this.get_input_byo_time = function()
+	{
+		var time = 0;
+
+		if (this.byo_min_input)
+		{
+			time += this.byo_min_input.value*60*1000;
+		}
+
+		if (this.byo_sec_input)
+		{
+			time += this.byo_sec_input.value*1000;
+		}
+		return time;
+
+	}
 	this.update_setting = function()
 	{
 		this.setting.initial_time = this.get_input_time();
+		if (this.byo_sec_input)
+		{
+		  this.setting.byo_time = this.get_input_byo_time();
+		  this.setting.byo_move = this.byo_move_input.value;
+		  this.setting.byo_period = this.byo_period_input.value;
+		}
 	}
 
 	this.add_setting = function()
