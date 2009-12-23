@@ -22,4 +22,13 @@ function ClockSetting()
 	this.byo_time = 30*1000;
 	this.byo_period = 5;
 	this.extra_time = 0;
+
+	this.copy_from = function(setting)
+	{
+	this.initial_time = setting.initial_time;
+	this.byo_move = setting.byo_move;
+	this.byo_time = setting.byo_time;
+	this.byo_period = setting.byo_period;
+	this.extra_time = setting.extra_time;
+	}
 }
