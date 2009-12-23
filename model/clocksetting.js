@@ -17,10 +17,9 @@
 function ClockSetting()
 {
 	this.initial_time = 40*60*1000;
-
-	this.initial_time = 1*1000;
+	this.initial_time = 15*1000;
 	this.byo_move = 1
-	this.byo_time = 5*1000;
-	this.byo_period = 1;
+	this.byo_time = 30*1000;
+	this.byo_period = 5;
 	this.extra_time = 0;
 }
