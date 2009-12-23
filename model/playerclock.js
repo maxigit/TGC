@@ -20,7 +20,7 @@ function PlayerClock(config)
 		this.remaining_time = this.config.initial_time;
 		//TODO byo=yomi
 		this.remaining_byo_move = this.config.byo_move;
-		this.remaining_byo_period = 5;
+		this.remaining_byo_period = this.config.byo_period;
 		this.move_number = 0;
 		this.state = NORMAL;
 	}
