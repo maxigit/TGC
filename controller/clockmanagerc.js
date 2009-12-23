@@ -185,4 +185,7 @@ function copy_setting_to_all(setting)
 		s = setting_controller_map[i].setting;
 		s.copy_from(setting);
 	}
+
+	reset_setting_controller();
+	reset();
 }

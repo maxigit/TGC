@@ -140,6 +140,7 @@ function ClockSettingController(setting, setting_div)
 		this.copy_button.controller = this;
 		this.copy_button.onclick = function()
 		{
+			this.controller.update_setting();
 			copy_setting_to_all(setting);
 		}
 
