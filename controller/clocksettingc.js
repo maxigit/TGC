@@ -13,6 +13,7 @@ function ClockSettingController(setting, setting_div)
 
 	this.validate_button = this.div.getElementsByClassName('validate')[0];
 	this.add_button = this.div.getElementsByClassName('add_time')[0];
+	this.copy_button = this.div.getElementsByClassName('copy')[0];
 	
 	this.get_input_time = function()
 	{
@@ -133,6 +134,15 @@ function ClockSettingController(setting, setting_div)
 			// TODO add time on clock instead ot setting if running.
 			reset();
 		}
+	}
+	if (this.copy_button)
+	{
+		this.copy_button.controller = this;
+		this.copy_button.onclick = function()
+		{
+			copy_setting_to_all(setting);
+		}
+
 	}
 }
 

@@ -177,3 +177,12 @@ function copy_html(src_id, dst_id)
 
 	dst_div.innerHTML = src_div.innerHTML;
 }
+
+function copy_setting_to_all(setting)
+{
+	for (i in setting_controller_map)
+	{
+		s = setting_controller_map[i].setting;
+		s.copy_from(setting);
+	}
+}
